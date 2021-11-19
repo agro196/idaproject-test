@@ -1,6 +1,6 @@
 <template>
   <main>
-    <h1 class="">Главная страница приложения</h1>
+    <h1 class="visually-hidden">Главная страница приложения</h1>
     <AppForm />
   </main>
 </template>

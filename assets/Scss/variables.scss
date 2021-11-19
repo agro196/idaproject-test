@@ -1,14 +1,21 @@
 // colors
+$body-background: rgba(255, 254, 251, 0.8);
 $basic-white: #ffffff;
-$basic-black: #000000;
-$basic-blue: #0078bb;
-$light-blue: #62b9ea;
-$dark-blue: #0a6ea6;
-$basic-grey: #808080;
+$basic-black: #3f3f3f;
+$secondary-black: #49485e;
+$basic-grey: #b4b4b4;
+$secondary-grey: #eeeeee;
+$basic-pink: #ff8484;
+$pearl: #fffefb;
 
 //shadows
 $shadow-primary: 0px 20px 30px rgba(0, 0, 0, 0.04),
   0px 6px 10px rgba(0, 0, 0, 0.02);
+$shadow-controls: 0px 2px 5px rgba(0, 0, 0, 0.1);
+
+//radius
+
+$radius: 4px;
 
 // breakpoints
 $tablet-width: 640px;
@@ -17,5 +24,4 @@ $mobile-width-only: 639px;
 
 //fonts
 
-$PT-Sans: 'PT Sans', 'Arial', sans-serif;
-$PT-Sans-Narrow: 'PT Sans Narrow', 'Arial', sans-serif;
+$font-family: 'Source Sans Pro', Arial, sans-serif;

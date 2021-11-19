@@ -3,7 +3,9 @@
 body {
   min-width: 375px;
   font-size: 16px;
-  font-family: $PT-Sans;
+  font-family: $font-family;
+  color: $basic-black;
+  background-color: $body-background;
 }
 
 img {
