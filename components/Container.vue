@@ -1,5 +1,5 @@
 <template>
-  <div class="root">
+  <div :class="$style.root">
     <slot></slot>
   </div>
 </template>
@@ -8,7 +8,7 @@
 export default {};
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" module>
 @import '~/assets/Scss/variables.scss';
 
 .root {

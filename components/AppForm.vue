@@ -1,6 +1,6 @@
 <template>
   <form :class="$style.root">
-    <h2 class="title">Добавление товара</h2>
+    <h2 :class="$style.title">Добавление товара</h2>
     <text-field
       v-model="data.name"
       :class="$style.field"
