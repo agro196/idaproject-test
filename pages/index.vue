@@ -1,7 +1,9 @@
 <template>
   <main>
-    <h1 class="visually-hidden">Главная страница приложения</h1>
-    <AppForm />
+    <Container>
+      <h1 class="visually-hidden">Главная страница приложения</h1>
+      <AppForm />
+    </Container>
   </main>
 </template>
 

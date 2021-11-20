@@ -1,25 +1,41 @@
 <template>
   <div>
-    <label v-if="textarea" class="label">
-      <span class="labelText">
-        <span v-if="required" class="flag"></span>
+    <label v-if="textarea" :class="$style.label">
+      <span :class="$style.labelText">
+        <span v-if="required" :class="$style.flag"></span>
         <slot></slot>
       </span>
-      <textarea :placeholder="placeholder" class="input textarea"></textarea>
+      <textarea
+        :value="value"
+        :placeholder="placeholder"
+        :class="[$style.input, $style.textarea]"
+        @input="updateInput"
+      ></textarea>
     </label>
-    <label v-else class="label">
-      <span class="labelText">
-        <span v-if="required" class="flag"></span>
+    <label v-else :class="$style.label">
+      <span :class="$style.labelText">
+        <span v-if="required" :class="$style.flag"></span>
         <slot></slot>
       </span>
-      <input :placeholder="placeholder" :type="type" class="input" />
+      <input
+        :value="value"
+        :type="type"
+        :placeholder="placeholder"
+        :class="$style.input"
+        @input="updateInput"
+      />
     </label>
   </div>
 </template>
 
 <script>
 export default {
+  name: 'TextField',
   props: {
+    // eslint-disable-next-line vue/require-default-prop
+    value: {
+      type: [String, Number],
+    },
     textarea: {
       type: Boolean,
       default: false,
@@ -37,10 +53,16 @@ export default {
       default: false,
     },
   },
+
+  methods: {
+    updateInput(event) {
+      this.$emit('input', event.target.value);
+    },
+  },
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" module>
 @import '~/assets/Scss/variables.scss';
 
 .label {
@@ -58,6 +80,9 @@ export default {
 
 .input {
   padding: 10px 16px;
+  font-family: $font-family;
+  font-size: 12px;
+  line-height: 15px;
   border: none;
   border-radius: $radius;
   box-shadow: $shadow-controls;
@@ -71,6 +96,7 @@ export default {
 
 .textarea {
   resize: none;
+  min-height: 108px;
 }
 
 .flag {
