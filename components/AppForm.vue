@@ -28,13 +28,12 @@
         :class="$style.field"
         placeholder="Введите цену"
         required
-        @keyup="value = value.replace(/[^\d]/g, '')"
         >Цена товара
       </text-field>
       <app-button
         :class="$style.button"
         type="button"
-        :disabled="false"
+        :disabled="true"
         @click="clickBtn"
         >Добавить товар</app-button
       >
