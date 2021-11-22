@@ -1,39 +1,45 @@
 <template>
-  <form :class="$style.root">
-    <h2 :class="$style.title">Добавление товара</h2>
-    <text-field
-      v-model="data.name"
-      :class="$style.field"
-      placeholder="Введите наименование товара"
-      required
-      >Наименование товара
-    </text-field>
-    <text-field
-      v-model="data.description"
-      :class="$style.field"
-      placeholder="Введите описание товара"
-      textarea
-      >Описание товара
-    </text-field>
-    <text-field
-      v-model="data.imgRef"
-      :class="$style.field"
-      placeholder="Введите ссылку"
-      required
-      >Ссылка на изображение товара
-    </text-field>
-    <text-field
-      v-model="data.price"
-      :class="$style.field"
-      placeholder="Введите цену"
-      required
-      @keyup="value = value.replace(/[^\d]/g, '')"
-      >Цена товара
-    </text-field>
-    <app-button :class="$style.button" type="button" @click="clickBtn"
-      >Добавить товар</app-button
-    >
-  </form>
+  <section :class="$style.root">
+    <form :class="$style.form">
+      <h2 :class="$style.title">Добавление товара</h2>
+      <text-field
+        v-model="data.name"
+        :class="$style.field"
+        placeholder="Введите наименование товара"
+        required
+        >Наименование товара
+      </text-field>
+      <text-field
+        v-model="data.description"
+        :class="$style.field"
+        placeholder="Введите описание товара"
+        textarea
+        >Описание товара
+      </text-field>
+      <text-field
+        v-model="data.imgRef"
+        :class="$style.field"
+        placeholder="Введите ссылку"
+        required
+        >Ссылка на изображение товара
+      </text-field>
+      <text-field
+        v-model="data.price"
+        :class="$style.field"
+        placeholder="Введите цену"
+        required
+        @keyup="value = value.replace(/[^\d]/g, '')"
+        >Цена товара
+      </text-field>
+      <app-button
+        :class="$style.button"
+        type="button"
+        :disabled="false"
+        @click="clickBtn"
+        >Добавить товар</app-button
+      >
+    </form>
+  </section>
 </template>
 
 <script>
@@ -66,9 +72,12 @@ export default {
 @import '~/assets/Scss/variables.scss';
 
 .root {
-  padding: 24px;
   background-color: $pearl;
   box-shadow: $shadow-primary;
+}
+
+.form {
+  padding: 24px;
 }
 
 .field:not(:last-of-type) {

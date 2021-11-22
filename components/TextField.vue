@@ -92,6 +92,14 @@ export default {
     font-size: 12px;
     color: $basic-grey;
   }
+
+  &:hover {
+    box-shadow: $shadow-hover;
+  }
+
+  &:focus {
+    outline: 1px solid $basic-grey;
+  }
 }
 
 .textarea {

@@ -2,7 +2,7 @@
   <div :class="$style.root">
     <img
       :class="$style.img"
-      src="#"
+      :src="require('../assets/img/image.jpg')"
       alt="Изображение товара"
       width="332"
       height="200"
@@ -15,19 +15,51 @@
       </p>
       <span :class="$style.price"> 10 000 руб. </span>
     </div>
+    <button :class="$style.deleteBtn">
+      <Icon />
+    </button>
   </div>
 </template>
 
 <script>
+import Icon from '~/assets/img/delete-icon.svg?inline';
+
 export default {
   name: 'Product',
+  components: { Icon },
 };
 </script>
 
 <style lang="scss" module>
+@import '~/assets/Scss/variables.scss';
+
 .root {
   display: flex;
+  position: relative;
   flex-direction: column;
+  box-shadow: $shadow-primary;
+
+  &:hover > .deleteBtn {
+    display: block;
+  }
+}
+
+.deleteBtn {
+  display: none;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-color: $basic-pink;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  border: none;
+  padding: 0;
+  right: -8px;
+  top: -8px;
+
+  &:hover {
+    background-color: lighten($basic-pink, 5%);
+  }
 }
 
 .img {

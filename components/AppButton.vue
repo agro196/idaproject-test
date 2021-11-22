@@ -49,15 +49,34 @@ export default {
   background-color: $basic-blue;
   color: $basic-white;
   border-radius: $radius-button;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+
+  &:hover {
+    background-color: lighten($basic-blue, 5%);
+  }
+
+  &:active {
+    background-color: darken($basic-blue, 5%);
+  }
 }
 .disabled {
   color: $basic-grey;
   cursor: default;
   background-color: $secondary-grey;
+  pointer-events: none;
 }
 
 .success {
   color: $basic-white;
   background-color: $basic-green;
+
+  &:hover {
+    background-color: lighten($basic-green, 5%);
+  }
+
+  &:active {
+    background-color: darken($basic-green, 5%);
+  }
 }
 </style>

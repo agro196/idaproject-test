@@ -18,8 +18,8 @@ export default {};
   padding-right: 20px;
 
   @media (min-width: $desktop-width) {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 32px;
+    padding-right: 32px;
   }
 }
 </style>
